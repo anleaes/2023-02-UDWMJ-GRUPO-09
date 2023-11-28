@@ -22,8 +22,9 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('arte/', include('arte.urls', namespace='arte')),
     path('', include('core.urls', namespace='core')),
-
+    
 
 
 

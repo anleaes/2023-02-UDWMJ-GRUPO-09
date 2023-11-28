@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+    Lista de arte - {{ block.super }}
+
+{% endblock title %}
+
+{% block body %}
+
+    <div class="container">
+        <br />
+        <h5><b>Lista de arte</b></h5>
+        <div class="row">
+            <div class ="col-md-12">
+                <br />
+                    <a href="{% url 'arte:add_arte' %}">Cadastro de nova arte</a>
+                <br />
+                <br />
+                <table class="table table-hover">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Descricao</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for arte in artes %}
+                        <tr>
+                            <th scope="row">{{ arte.id }}</th>
+                            <td>{{ arte.name }}</td>
+                            <td>{{ arte.description }}</td>
+                            <td>
+                                <a href="{% url 'arte:edit_arte' arte.id %}" class="btn btn-primary btn-sm">Editar</a>
+                            </td>
+                            <td>
+                                <a href="{% url 'arte:delete_arte' arte.id %}" class="btn btn-danger btn-sm ">Excluir</a>
+                            </td>
+                        </tr> 
+                    {% endfor %}
+                </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}
