@@ -9,7 +9,7 @@ class Arte(models.Model):
     
     class Meta:
         verbose_name = 'arte'
-        verbose_name_plural = 'arte'
+        verbose_name_plural = 'artes'
         ordering =['id']
 
     def __str__(self):
