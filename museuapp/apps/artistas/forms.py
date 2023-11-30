@@ -1,8 +1,8 @@
 from django import forms
-from .models import Artistas
+from .models import Artista
 
-class ArtistasForm(forms.ModelForm):
+class ArtistaForm(forms.ModelForm):
 
     class Meta:
-        model = Artistas
+        model = Artista
         exclude = ('created_on' , 'updated_on',)

@@ -36,16 +36,15 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'core.apps.CoreConfig',
-     'arte.apps.ArteConfig',
-    
-      
+    'arte.apps.ArteConfig',
+    'artistas.apps.ArtistasConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-     'widget_tweaks',
+    'widget_tweaks',
 ]    
 
 MIDDLEWARE = [
