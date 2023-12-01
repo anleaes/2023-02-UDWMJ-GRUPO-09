@@ -36,7 +36,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'core.apps.CoreConfig',
-    
+    'apps.art.apps.ArtConfig',
     
     
     'django.contrib.admin',
