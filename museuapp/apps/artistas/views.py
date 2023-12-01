@@ -12,15 +12,15 @@ def add_artista(request):
             f.save()
             form.save_m2m()
             return redirect('artistas:list_artistas')
-    form = ArtistaForm()
-    context['form'] = form
-    return render(request, template_name, context)
+        form = ArtistaForm()
+        context['form'] = form
+        return render(request, template_name, context)
 
 def list_artistas(request):
     template_name = 'artistas/list_artistas.html'
-    artista = Artista.objects.filter()
+    artistas = Artista.objects.filter()
     context = {
-        'artistas': artista,
+        'artistas': artistas,
     }
     return render(request,template_name, context)
 
