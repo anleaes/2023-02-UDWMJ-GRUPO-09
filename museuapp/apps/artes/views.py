@@ -18,9 +18,9 @@ def add_arte(request):
 
 def list_artes(request):
     template_name = 'artes/list_artes.html'
-    artista = Arte.objects.filter()
+    arte = Arte.objects.filter()
     context = {
-        'artistas': artista,
+        'artes': arte,
     }
     return render(request,template_name, context)
 
@@ -33,7 +33,7 @@ def edit_arte(request, id_artes):
         form = ArteForm(request.POST, instance=artes)
         if form.is_valid():
             form.save()
-            return redirect('artistas:list_artes')
+            return redirect('artes:list_artes')
     form = ArteForm(instance=artes)
     context['form'] = form
     return render(request, template_name, context)
@@ -41,13 +41,13 @@ def edit_arte(request, id_artes):
 def delete_arte(request, id_arte):
     arte = Arte.objects.get(id=id_arte)
     arte.delete()
-    return redirect('artistas:list_artes')
+    return redirect('artes:list_artes')
 
 def search_artes(request):
-    template_name = 'artistas/list_artes.html'
+    template_name = 'artes/list_artes.html'
     query = request.GET.get('query')
-    artes = Artes.objects.filter(name=query)
+    artes = Arte.objects.filter(name=query)
     context = {
-        'artes': arte,
+        'artes': artes,
     } 
     return render(request,template_name, context)
