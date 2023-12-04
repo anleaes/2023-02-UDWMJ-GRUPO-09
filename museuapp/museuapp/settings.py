@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'artistas.apps.ArtistasConfig',
     'artes.apps.ArtesConfig',
     'entidades.apps.EntidadesConfig',
+    'clientes.apps.ClientesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
