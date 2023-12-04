@@ -37,6 +37,9 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'artistas.apps.ArtistasConfig',
+    'artes.apps.ArtesConfig',
+    'entidades.apps.EntidadesConfig',
+    'clientes.apps.ClientesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
