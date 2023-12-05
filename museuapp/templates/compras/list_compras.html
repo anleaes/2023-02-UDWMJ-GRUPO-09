@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+    Lista de compras - {{ block.super }}
+
+{% endblock title %}
+
+{% block body %}
+
+    <div class="container">
+        <br />
+        <h5><b>Lista de compras</b></h5>
+        <div class="row">
+            <div class ="col-md-12">
+                <br />
+                    <a href="{% url 'compras:add_compra' %}">Cadastro de novas compras</a>   
+                <br />
+                <br />
+                <table class="table table-hover">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome do item comprado</th>
+                    <th scope="col">Preço comprado</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for compra in compras %}
+                        <tr>
+                            <th scope="row">{{ compra.id }}</th>
+                            <td>{{ compra.name }}</td>
+                            <td>{{ compra.description }}</td>
+                            <td>
+                            </td>
+                            <td>
+                                <a href="{% url 'compras:delete_compra' compra.id %}" class="btn btn-danger btn-sm ">Excluir</a>
+                            </td>
+                        </tr> 
+                    {% endfor %}
+                </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}
