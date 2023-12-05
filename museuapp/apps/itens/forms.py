@@ -1,17 +1,8 @@
-from django.db import models
+from django import forms
+from .models import Item
 
-# Create your models here.
+class ItemForm(forms.ModelForm):
 
-class Item(models.Model):
-    created_on = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now=True)
-    name = models.CharField('Nome', max_length=50)
-    description = models.CharField('Descricao', max_length=100) 
-    
     class Meta:
-        verbose_name = 'itens'
-        verbose_name_plural = 'itens'
-        ordering =['id']
-
-    def __str__(self):
-        return self.name
+        model = Item
+        exclude = ('created_on' , 'updated_on',)
