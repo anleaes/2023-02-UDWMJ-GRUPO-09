@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'artes.apps.ArtesConfig',
     'entidades.apps.EntidadesConfig',
     'clientes.apps.ClientesConfig',
+    'itens.apps.ItensConfig',
+    'compras.apps.ComprasConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
