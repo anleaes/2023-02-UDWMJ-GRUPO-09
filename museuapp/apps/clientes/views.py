@@ -1,6 +1,7 @@
 from .forms import ClienteForm
 from .models import Cliente
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
 
 def add_cliente(request):
     template_name = 'clientes/add_cliente.html'
