@@ -38,10 +38,12 @@ def edit_arte(request, id_artes):
     context['form'] = form
     return render(request, template_name, context)
 
+
 def delete_arte(request, id_arte):
     arte = Arte.objects.get(id=id_arte)
     arte.delete()
     return redirect('artes:list_artes')
+
 
 def search_artes(request):
     template_name = 'artes/list_artes.html'
